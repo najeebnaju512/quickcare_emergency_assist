@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quickcare_emergency_assist/utils/colors.dart';
 import 'widgets/signinLogin.dart';
 
 class LoginSignUp extends StatelessWidget {
@@ -55,7 +56,7 @@ class LoginSignUp extends StatelessWidget {
                         style: GoogleFonts.cormorantGaramond(
                             // color: isDarkmode ? Colors.black : Colors.white,
                             fontSize: 16,
-                            fontWeight: FontWeight.w500),
+                            fontWeight: FontWeight.w600),
                       )
                     ],
                   ),
@@ -79,9 +80,7 @@ class LoginSignUp extends StatelessWidget {
                         bottomRight: Radius.elliptical(210, 90)),
                     gradient:
                         LinearGradient(begin: Alignment.bottomLeft, colors: [
-                      Colors.red[900]!,
-                      Colors.red[500]!,
-                      Colors.orange[500]!,
+                      AppTheme.accentColor,AppTheme.neutralColor
                     ])),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

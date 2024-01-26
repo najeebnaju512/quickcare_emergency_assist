@@ -1,11 +1,12 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quickcare_emergency_assist/views/loginSignup/loginSignup.dart';
 import 'package:quickcare_emergency_assist/views/onboard/widgets/intropage1.dart';
 import 'package:quickcare_emergency_assist/views/onboard/widgets/intropage2.dart';
 import 'package:quickcare_emergency_assist/views/onboard/widgets/intropage3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import '../../utils/colors.dart';
 
 void main(List<String> args) {
   runApp(MaterialApp(
@@ -18,44 +19,38 @@ class Onboarding extends StatelessWidget {
   Onboarding({super.key});
   //controller to keep track on which page we are on
   PageController _pageCntrl = PageController();
+  //keep track of last page
+  // bool onLastpage = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
       children: [
-        
         PageView(
           controller: _pageCntrl,
+          // onPageChanged: (index) {
+          //   if (index == 2) {
+          //     onLastpage = true;
+          //   }
+          // },
           children: [IntroPage1(), IntroPage2(), IntroPage3()],
-        ),
-        Container(
-          alignment: Alignment(9, -9),
-          child: TextButton(
-              onPressed: () {},
-              child: Text(
-                "Skip",
-                style: GoogleFonts.merriweather(
-                    color: Colors.white, fontWeight: FontWeight.w700),
-              )),
         ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          // crossAxisAlignment: CrossAxisAlignment.baseline,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            bottonChanged(context),
+            SizedBox(
+              height: 15,
+            ),
             // dot indicator
             SmoothPageIndicator(
               controller: _pageCntrl,
               count: 3,
-              // effect: SlideEffect(
-              // dotColor: Colors.transparent, activeDotColor: Colors.white),
               effect: ExpandingDotsEffect(
                   dotColor: Colors.white,
                   activeDotColor: Colors.black45,
                   expansionFactor: 5),
-              // effect: JumpingDotEffect(
-              //     dotColor: Colors.grey, activeDotColor: Colors.white),
-              // effect: SwapEffect(
-              //     dotColor: Colors.grey, activeDotColor: Colors.white),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,18 +64,18 @@ class Onboarding extends StatelessWidget {
                     child: Text(
                       "< Previous",
                       style: GoogleFonts.merriweather(
-                          color: Colors.lightBlue, fontWeight: FontWeight.w700),
+                          color: AppTheme.accentColor,
+                          fontWeight: FontWeight.w700),
                     )),
                 TextButton(
                     onPressed: () {
-                      _pageCntrl.nextPage(
-                          duration: Duration(milliseconds: 400),
-                          curve: Curves.easeIn);
+                      _pageCntrl.jumpToPage(2);
                     },
                     child: Text(
-                      "Next >",
+                      "Skip>>",
                       style: GoogleFonts.merriweather(
-                          color: Colors.redAccent, fontWeight: FontWeight.w700),
+                          color: AppTheme.accentColor,
+                          fontWeight: FontWeight.w700),
                     )),
               ],
             ),
@@ -91,5 +86,71 @@ class Onboarding extends StatelessWidget {
         )
       ],
     ));
+  }
+
+  bottonChanged(context) {
+    if (_pageCntrl != 2) {
+      return MaterialButton(
+        onPressed: () {
+          _pageCntrl.nextPage(
+              duration: Duration(milliseconds: 500),
+              curve: Easing.legacyAccelerate);
+        },
+        child: Container(
+          height: 40,
+          width: 100,
+          decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.9),
+                  blurRadius: 5,
+                  spreadRadius: 2,
+                  offset: Offset(2, 0),
+                ),
+              ],
+              border: Border.all(color: Colors.white38, width: 5),
+              borderRadius: BorderRadius.circular(15),
+              color: AppTheme.accentColor3),
+          child: Center(
+            child: Text(
+              " Next ",
+              style: GoogleFonts.merriweather(
+                  color: AppTheme.accentColor, fontWeight: FontWeight.w700),
+            ),
+          ),
+        ),
+      );
+    } else {
+      return MaterialButton(
+        onPressed: () {
+          //navigation to login page
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => LoginSignUp()));
+        },
+        child: Container(
+          height: 40,
+          width: 100,
+          decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.9),
+                  blurRadius: 5,
+                  spreadRadius: 2,
+                  offset: Offset(2, 0),
+                ),
+              ],
+              border: Border.all(color: Colors.white38, width: 5),
+              borderRadius: BorderRadius.circular(15),
+              color: AppTheme.accentColor3),
+          child: Center(
+            child: Text(
+              " Get Started ",
+              style: GoogleFonts.merriweather(
+                  color: AppTheme.accentColor, fontWeight: FontWeight.w700),
+            ),
+          ),
+        ),
+      );
+    }
   }
 }
