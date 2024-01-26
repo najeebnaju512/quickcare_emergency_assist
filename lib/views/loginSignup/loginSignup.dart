@@ -4,8 +4,6 @@ import 'widgets/signinLogin.dart';
 
 class LoginSignUp extends StatelessWidget {
   var isSignin;
-  // bool? isDarkmode;
-
 
   var name_cntrl = TextEditingController();
 
@@ -20,7 +18,6 @@ class LoginSignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        
         appBar: AppBar(
           backgroundColor: Colors.transparent,
         ),
@@ -90,11 +87,13 @@ class LoginSignUp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    _signinLoginWidget.signButton("SignIn", context, isSignin = true),
+                    _signinLoginWidget.signButton(
+                        "SignIn", context, isSignin = true),
                     SizedBox(
                       height: 10,
                     ),
-                    _signinLoginWidget.signButton("SignUp", context, isSignin = false),
+                    _signinLoginWidget.signButton(
+                        "SignUp", context, isSignin = false),
                     SizedBox(
                       height: 20,
                     ),
@@ -128,13 +127,4 @@ class LoginSignUp extends StatelessWidget {
           ),
         ));
   }
-
-  // void setdarkmode() {
-  //   isDarkmode = !isDarkmode!;
-  //   // if (isDarkmode == true) {
-  //   //   isDarkmode = false;
-  //   // } else {
-  //   //   isDarkmode = true;
-  //   // }
-  // }
 }
