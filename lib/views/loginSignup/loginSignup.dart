@@ -78,10 +78,9 @@ class LoginSignUp extends StatelessWidget {
                         topRight: Radius.elliptical(210, 90),
                         topLeft: Radius.elliptical(360, 120),
                         bottomRight: Radius.elliptical(210, 90)),
-                    gradient:
-                        LinearGradient(begin: Alignment.bottomLeft, colors: [
-                      AppTheme.accentColor,AppTheme.neutralColor
-                    ])),
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        colors: [AppTheme.accentColor, AppTheme.neutralColor])),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

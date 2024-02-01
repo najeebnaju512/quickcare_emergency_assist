@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quickcare_emergency_assist/views/loginSignup/loginSignup.dart';
-import 'package:quickcare_emergency_assist/views/onboard/widgets/intropage1.dart';
-import 'package:quickcare_emergency_assist/views/onboard/widgets/intropage2.dart';
-import 'package:quickcare_emergency_assist/views/onboard/widgets/intropage3.dart';
+import '../loginSignup/loginSignup.dart';
+import 'widgets/intropage1.dart';
+import 'widgets/intropage2.dart';
+import 'widgets/intropage3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../utils/colors.dart';
@@ -64,7 +64,7 @@ class Onboarding extends StatelessWidget {
                     child: Text(
                       "< Previous",
                       style: GoogleFonts.merriweather(
-                          color: AppTheme.accentColor,
+                          color: AppTheme.primaryColor,
                           fontWeight: FontWeight.w700),
                     )),
                 TextButton(
@@ -74,7 +74,7 @@ class Onboarding extends StatelessWidget {
                     child: Text(
                       "Skip>>",
                       style: GoogleFonts.merriweather(
-                          color: AppTheme.accentColor,
+                          color: AppTheme.primaryColor,
                           fontWeight: FontWeight.w700),
                     )),
               ],
@@ -108,14 +108,14 @@ class Onboarding extends StatelessWidget {
                   offset: Offset(2, 0),
                 ),
               ],
-              border: Border.all(color: Colors.white38, width: 5),
+              border: Border.all(color: Colors.white38, width: 2),
               borderRadius: BorderRadius.circular(15),
-              color: AppTheme.accentColor3),
+              color: AppTheme.accentColor2),
           child: Center(
             child: Text(
               " Next ",
               style: GoogleFonts.merriweather(
-                  color: AppTheme.accentColor, fontWeight: FontWeight.w700),
+                  color: AppTheme.primaryColor, fontWeight: FontWeight.w700),
             ),
           ),
         ),
@@ -141,7 +141,7 @@ class Onboarding extends StatelessWidget {
               ],
               border: Border.all(color: Colors.white38, width: 5),
               borderRadius: BorderRadius.circular(15),
-              color: AppTheme.accentColor3),
+              color: AppTheme.secondaryColor),
           child: Center(
             child: Text(
               " Get Started ",

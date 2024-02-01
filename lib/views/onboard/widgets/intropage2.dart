@@ -14,13 +14,18 @@ class IntroPage2 extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(200), bottomLeft: Radius.circular(200)),
-          gradient: LinearGradient(
+              gradient: LinearGradient(
             colors: [
-              AppTheme.accentColor,
-              AppTheme.neutralColor,
+              AppTheme.accentColor2,
+              AppTheme.accentColor3,
             ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+          // gradient: LinearGradient(
+          //   colors: [
+          //     AppTheme.accentColor,
+          //     AppTheme.neutralColor,
+          //   ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           )),
       child: Padding(
         padding: const EdgeInsets.all(15.0),

@@ -15,13 +15,18 @@ class IntroPage1 extends StatelessWidget {
           topLeft: Radius.circular(200),
           bottomRight: Radius.circular(200)
         ),
-          gradient: LinearGradient(
-        colors: [
-          AppTheme.secondaryColor,
-          AppTheme.primaryColor,
-        ],
+        gradient: LinearGradient(
+            colors: [
+              AppTheme.accentColor2,
+              AppTheme.accentColor3,
+            ],
+        //   gradient: LinearGradient(
+        // colors: [
+        //   AppTheme.secondaryColor,
+        //   AppTheme.primaryColor,
+        // ],
         begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        end: Alignment.bottomCenter,
       )),
       child: Padding(
         padding: const EdgeInsets.all(15.0),

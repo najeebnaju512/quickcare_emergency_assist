@@ -22,7 +22,7 @@ class IntroPage3 extends StatelessWidget {
               AppTheme.accentColor3,
             ],
             begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            end: Alignment.bottomCenter,
           )),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
