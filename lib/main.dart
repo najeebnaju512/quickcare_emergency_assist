@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quickcare_emergency_assist/views/loginSignup/loginSignup.dart';
 
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'QuickCare ',
        theme: isDark == true ? ThemeData.dark() : ThemeData.light(),
-      home: LoginSignUp(),
+      // home: ,
     );
   }
 }
