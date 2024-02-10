@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:quickcare_emergency_assist/controller/onbrd_controller.dart';
+import 'package:quickcare_emergency_assist/view/onboarding/onboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +14,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'QuickCare ',
-       theme: isDark == true ? ThemeData.dark() : ThemeData.light(),
-      // home: ,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => OnboardController(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'QuickCare ',
+        theme: isDark == true ? ThemeData.dark() : ThemeData.light(),
+        home: Onboard(),
+      ),
     );
   }
 }
-

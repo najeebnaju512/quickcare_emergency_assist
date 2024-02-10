@@ -10,7 +10,7 @@ class OnboardContent {
       required this.subtitle,
       required this.description});
 
-  List<OnboardContent> contents = [
+  List<OnboardContent> onbContents = [
     OnboardContent(
       asset: "assets/animation/intro1.json",
       title: "Swift Emergency Assistance",
