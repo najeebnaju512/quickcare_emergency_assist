@@ -4,20 +4,20 @@ class OnboardContent {
     "title": "Swift Emergency Assistance",
     "subtitle": "Your Lifeline in Urgency",
     "description":
-        "Welcome to QuickCare-your go-to app for immediate access to vital emergency services. Whether you need a hospital, an ambulance, police assistance, fire services, or a blood donor, QuickCare has you covered. Let's get started to ensure your safety and well-being.",
+        "Welcome to QuickCare - your all-in-one app for instant access to emergency services. Find hospitals, ambulances, police, fire services, or blood donors quickly. Ensure your safety and well-being with QuickCare."
   };
   Map<String, dynamic> page2 = {
     "asset": "assets/animation/intro2.json",
     "title": "Quick Access, Quick Response",
     "subtitle": "User-Friendly Interface",
     "description":
-        "QuickCare is designed with simplicity in mind. Easily navigate through our user-friendly interface to find and request assistance with just a few taps. Whether it's a medical emergency or you need urgent help from authorities, QuickCare ensures instant access to the right services when you need them the most.",
+        "QuickCare: Simple, user-friendly design for easy navigation. Get assistance with a few taps for medical emergencies or urgent help from authorities instantly."
   };
   Map<String, dynamic> page3 = {
     "asset": "assets/animation/intro3.json",
     "title": " Localized Assistance",
     "subtitle": "Help Where You Are",
     "description":
-        "QuickCare utilizes your location to provide real-time information about nearby hospitals, ambulance services, police stations, fire stations, and blood donation centers. Be assured that help is just a click away. Your safety matters, and QuickCare is here to ensure that vital services are easily accessible whenever you need them.",
+        "QuickCare uses your location for real-time info on nearby hospitals, ambulances, police, fire stations, and blood donation centers. Help is just a click away, ensuring your safety with easy access to vital services.",
   };
 }
