@@ -70,25 +70,27 @@ class _OtpGenState extends State<OtpGen> {
                     SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        OtpBox(),
-                        OtpBox(),
-                        OtpBox(),
-                        OtpBox(),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          OtpBox(),
+                          OtpBox(),
+                          OtpBox(),
+                          OtpBox(),
+                        ],
+                      ),
                     ),
                   ],
                 ),
               ),
             )),
             Positioned(
-              // top: height*6,
-              bottom: 20,
+              bottom: height/39,
               child: Container(
                 padding: EdgeInsets.symmetric(
-                  horizontal: 15,
+                  horizontal: 25,
                 ),
                 height: 55,
                 width: width,
@@ -97,7 +99,10 @@ class _OtpGenState extends State<OtpGen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // print(height);
+                        // print(width);
+                      },
                       child: Center(
                         child: Text(
                           "Resend",

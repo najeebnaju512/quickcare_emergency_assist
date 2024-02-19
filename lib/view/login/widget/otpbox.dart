@@ -26,11 +26,9 @@ class OtpBox extends StatelessWidget {
             }
           },
           decoration: InputDecoration(
-            hintText: "_",
-            hintStyle: TextStyle(
-              fontSize: 20
-            ),
-            border: InputBorder.none),
+              hintText: "_",
+              hintStyle: TextStyle(fontSize: 20),
+              border: InputBorder.none),
           style: Theme.of(context).textTheme.headlineMedium,
           keyboardType: TextInputType.number,
           textAlign: TextAlign.center,

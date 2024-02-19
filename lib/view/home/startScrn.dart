@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:quickcare_emergency_assist/view/home/screens/home.dart';
+import 'package:quickcare_emergency_assist/view/home/screens/profile.dart';
+import 'package:quickcare_emergency_assist/view/home/screens/sos.dart';
 import '../../utils/colors.dart';
 import '../../controller/bottomnav_Cntrl.dart';
 
@@ -9,35 +12,35 @@ class ScreenStart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-        backgroundColor: ColorTheme.white,
+    return SafeArea(
+      child: Scaffold(
+        extendBody: true,
+        //backgroundColor: Colors.red[100],
         body: Consumer<BottomNavigationProvider>(
           builder: (context, provider, child) {
             return IndexedStack(
               index: provider.currentIndex,
-              children: [
-                // HomeScreen(),
-                // SosScreen(),
-                // UserScreen(),
-              ],
+              children: [HomeSceen(), SosScreen(), UserScreen()],
             );
           },
         ),
         bottomNavigationBar: Consumer<BottomNavigationProvider>(
           builder: (context, provider, child) {
             return Padding(
-              padding: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.only(left: 5,right: 5,bottom: 5),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30),
                 child: BottomNavigationBar(
                   onTap: (index) {
                     provider.currentIndex = index;
-                    print("tapped object");
+                    print("tapped ${provider.currentIndex}");
                   },
+                  
+                  type: BottomNavigationBarType.fixed,
                   currentIndex: provider.currentIndex,
                   elevation: 0,
-                  backgroundColor: Colors.blue[200],
-                  unselectedItemColor: Colors.grey,
+                 backgroundColor: Colors.blue[100],
+                  unselectedItemColor: Colors.black54,
                   selectedItemColor: Colors.red[400],
                   showSelectedLabels: false,
                   showUnselectedLabels: false,
@@ -45,10 +48,10 @@ class ScreenStart extends StatelessWidget {
                   items: [
                     BottomNavigationBarItem(
                         icon: Icon(
-                          Icons.home,
+                          Icons.home_outlined,
                         ),
                         label: "Home",
-                        activeIcon: Icon(Icons.home_outlined)),
+                        activeIcon: Icon(Icons.home)),
                     BottomNavigationBarItem(
                         icon: Icon(
                           Icons.sos,
@@ -57,17 +60,17 @@ class ScreenStart extends StatelessWidget {
                         activeIcon: Icon(Icons.emergency_share)),
                     BottomNavigationBarItem(
                         icon: Icon(
-                          Icons.person,
+                          Icons.person_2_outlined,
                         ),
                         label: "User",
-                        
-                        activeIcon: Icon(Icons.person_2_outlined)),
+                        activeIcon: Icon(Icons.person)),
                   ],
                 ),
               ),
             );
           },
         ),
-      );
+      ),
+    );
   }
 }
