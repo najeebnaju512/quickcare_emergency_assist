@@ -5,7 +5,7 @@ import 'package:quickcare_emergency_assist/view/home/screens/home.dart';
 import 'package:quickcare_emergency_assist/view/home/screens/profile.dart';
 import 'package:quickcare_emergency_assist/view/home/screens/sos.dart';
 import '../../utils/colors.dart';
-import '../../controller/bottomnav_Cntrl.dart';
+import '../../controller/bottomnav_cntrl.dart';
 
 class ScreenStart extends StatelessWidget {
   const ScreenStart({super.key});
@@ -15,7 +15,6 @@ class ScreenStart extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         extendBody: true,
-        //backgroundColor: Colors.red[100],
         body: Consumer<BottomNavigationProvider>(
           builder: (context, provider, child) {
             return IndexedStack(
@@ -29,7 +28,7 @@ class ScreenStart extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.only(left: 5,right: 5,bottom: 5),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(20),
                 child: BottomNavigationBar(
                   onTap: (index) {
                     provider.currentIndex = index;
@@ -39,12 +38,12 @@ class ScreenStart extends StatelessWidget {
                   type: BottomNavigationBarType.fixed,
                   currentIndex: provider.currentIndex,
                   elevation: 0,
-                 backgroundColor: Colors.blue[100],
-                  unselectedItemColor: Colors.black54,
-                  selectedItemColor: Colors.red[400],
-                  showSelectedLabels: false,
+                 backgroundColor: ColorTheme.l8Blue.withOpacity(.6),
+                  unselectedItemColor: ColorTheme.black,
+                  selectedItemColor: ColorTheme.redaccent,
+                  showSelectedLabels: true,
                   showUnselectedLabels: false,
-                  selectedLabelStyle: GoogleFonts.kanit(fontSize: 20),
+                  selectedLabelStyle: GoogleFonts.kanit(fontSize: 11),
                   items: [
                     BottomNavigationBarItem(
                         icon: Icon(

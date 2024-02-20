@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/services.dart';
+import 'package:quickcare_emergency_assist/controller/location_cntrl.dart';
 import 'package:quickcare_emergency_assist/controller/onbrd_controller.dart';
 import 'package:quickcare_emergency_assist/view/onboarding/onboard.dart';
 
-import 'controller/bottomnav_Cntrl.dart';
+import 'controller/bottomnav_cntrl.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.grey));
   runApp(const MyApp());
 }
 
@@ -22,7 +26,11 @@ class MyApp extends StatelessWidget {
           create: (context) => OnboardController(),
         ),
         ChangeNotifierProvider(
-      create: (context) => BottomNavigationProvider(),)
+          create: (context) => BottomNavigationProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => LocationController(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

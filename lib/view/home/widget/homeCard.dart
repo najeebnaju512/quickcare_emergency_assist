@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utils/colors.dart';
-import 'listGenerate.dart';
+import '../screens/listGenerate.dart';
 
 class homeCard extends StatelessWidget {
   var imgpath;
@@ -16,6 +16,7 @@ class homeCard extends StatelessWidget {
             context, MaterialPageRoute(builder: (context) => ListGenerate()));
       },
       child: Card(
+        elevation: 5,
         child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             decoration: BoxDecoration(
@@ -24,8 +25,9 @@ class homeCard extends StatelessWidget {
                     image: AssetImage(imgpath), fit: BoxFit.cover)),
             child: Text(
               title,
+              textAlign: TextAlign.end,
               style: GoogleFonts.lora(
-                  fontWeight: FontWeight.w500, color: ColorTheme.black),
+                  fontWeight: FontWeight.w500, color: ColorTheme.red),
             )),
       ),
     );
