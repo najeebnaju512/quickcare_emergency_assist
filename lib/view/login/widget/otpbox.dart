@@ -22,6 +22,7 @@ class OtpBox extends StatelessWidget {
         child: TextField(
           onChanged: (value) {
             if (value.length == 1) {
+              //to pop the cursor to next feild if one value is entered
               FocusScope.of(context).nextFocus();
             }
           },
