@@ -44,3 +44,12 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+/*
+#TODO
+firebase phone auth
+data storing fethching
+sos screen completion
+list view of each catagory(hospital, police, etc)
+data entry ui creation
+profile editing ui 
+ */
