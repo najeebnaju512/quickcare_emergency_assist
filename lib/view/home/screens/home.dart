@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:quickcare_emergency_assist/controller/location_cntrl.dart';
 import 'package:quickcare_emergency_assist/model/static_db.dart';
 import 'package:quickcare_emergency_assist/utils/colors.dart';
 import 'package:quickcare_emergency_assist/view/home/widget/homeCard.dart';
@@ -12,9 +11,7 @@ class HomeSceen extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    LocationController locationController =
-        Provider.of<LocationController>(context);
-    // locationController.fetchPosition();
+    
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
@@ -30,7 +27,7 @@ class HomeSceen extends StatelessWidget {
               ),
             ),
             centerTitle: true,
-            backgroundColor: ColorTheme.l8Blue.withOpacity(.6),
+            backgroundColor: ColorTheme.red.withOpacity(.8),
             toolbarHeight: height * .09,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
@@ -42,22 +39,17 @@ class HomeSceen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: ListView(
               children: [
-                Row(
-                  children: [
-                    Text(
-                      "Nearby Assistance",
-                      style: GoogleFonts.lora(
-                          color: ColorTheme.drkBlue,
-                          fontSize: height * .025,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    Consumer<LocationController>(
-                      builder: (context, loc_cntrl, child) {
-                        return Text(loc_cntrl.address);
-                      },
-                    )
-                  ],
-                ),
+                // Row(
+                //   children: [
+                //     Text(
+                //       "Nearby Assistance",
+                //       style: GoogleFonts.lora(
+                //           color: ColorTheme.drkBlue,
+                //           fontSize: height * .025,
+                //           fontWeight: FontWeight.w500),
+                //     ),
+                //   ],
+                // ),
                 SizedBox(
                   height: 5,
                 ),

@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
           children: [
             SizedBox(height: 40,),
             Text(
-              "Get Started",
+              "Welcome",
               textAlign: TextAlign.center,
               style: GoogleFonts.ptSerif(
                   fontSize: 35,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
-import 'package:quickcare_emergency_assist/controller/location_cntrl.dart';
 import 'package:quickcare_emergency_assist/controller/onbrd_controller.dart';
+import 'package:quickcare_emergency_assist/controller/sos_cntrol.dart';
 import 'package:quickcare_emergency_assist/view/onboarding/onboard.dart';
 
 import 'controller/bottomnav_cntrl.dart';
@@ -28,9 +28,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => BottomNavigationProvider(),
         ),
+        // ChangeNotifierProvider(
+        //   create: (context) => ,
+        // ),
         ChangeNotifierProvider(
-          create: (context) => LocationController(),
-        )
+          create: (context) => SosCntrol(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

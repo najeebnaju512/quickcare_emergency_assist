@@ -33,8 +33,24 @@ class StaticDb {
   ];
 
   static Map<String, dynamic> profileDetails = {
-    'username':'Anand',
-    'phoneno':'1234567890',
-    'image':"assets/images/profile.jpg"
+    'username': 'Anand',
+    'phoneno': '1234567890',
+    'image': "assets/images/profile.jpg"
+  };
+  static Map<String, List<String>> mainData = {
+    'Trivandrum': ['Neyyattinkara', 'Attingal', 'Kazhakuttam'],
+    'Kollam': ['Kollam Town', 'Punalur', 'Karunagappally'],
+    'Alappuzha': ['Alappuzha Town', 'Cherthala', 'Kayamkulam'],
+    'Pathanamthitta': ['Adoor', 'Thiruvalla', 'Pathanamthitta Town'],
+    'Kottayam': ['Kottayam Town', 'Changanassery', 'Vaikom'],
+    'Idukki': ['Idukki Town', 'Thodupuzha', 'Adimali'],
+    'Ernakulam': ['Kochi', 'Kothamangalam', 'Aluva'],
+    'Thrissur': ['Thrissur', 'Kodungallur', 'Chalakudy'],
+    'Palakkad': ['Palakkad', 'Ottapalam', 'Chittur'],
+    'Malappuram': ['Malappuram', 'Manjeri', 'Perinthalmanna'],
+    'Kozhikode': ['Kozhikode', 'Vadakara', 'Koyilandy'],
+    'Wayanad': ['Kalpetta', 'Sulthan Bathery', 'Mananthavady'],
+    'Kannur': ['Kannur', 'Thalassery', 'Mattannur'],
+    'Kasaragod': ['Kasaragod', 'Kanhangad', 'Nileshwaram'],
   };
 }
